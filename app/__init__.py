@@ -12,3 +12,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 from . import models
+from . import views
+from .my_blueprints import auth, tasks
+app.register_blueprint(auth.bp)
+app.register_blueprint(tasks.bp)

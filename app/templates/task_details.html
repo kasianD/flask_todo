@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+ {{ title }}
+{% endblock %}
+
+{% block body %}
+<div class='row'>
+	<h1> {{ title }} </h1>
+</div>
+<div class='row'>
+	<div class="col-12">
+		<form method="POST">
+			<div class="form-group">
+
+				{{ form.csrf_token }}
+
+				{{ form.title.label }} {{ form.title(size=64, class_="form-control") }}
+				{{ form.title.errors[0] }} 
+
+				{{ form.description.label }} {{ form.description(size=256, class_="form-control") }}
+				{{ form.description.errors[0] }} 
+
+				{{ form.due_date.label }} {{ form.due_date(class_="form-control") }}
+				{{ form.due_date.errors[0] }} 
+
+				{{ form.is_accomplished.label }} {{ form.is_accomplished(class_="form-control") }}
+				{{ form.is_accomplished.errors[0] }} 
+			</div>
+			<button type="submit" class="btn btn-success">Submit</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

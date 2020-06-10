@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Your tasks
+{% endblock %}
+
+{% block body %}
+
+<div class='row mt-3'>
+	<div class="col-3"><h1> Tasks </h1></div>
+	<div class="col-3"><a href="{{ url_for('tasks.create') }}" role="button" class="btn btn-primary">Create  new</a></div> 
+</div>
+
+<div class='row'>
+	<div class="col-12">
+		<ul class="list-group">
+			{% for task in tasks %}
+			
+			<div class="row" style="border-bottom: 1px solid">
+				<div class="col-5">
+					<a href="{{ url_for('tasks.details', id=task.id) }}">{{ task.title }}</a> 
+				</div>
+				<div class="col-3">DUE: {{ task.due_date }}</div>
+				<div class="col-2">
+					<a href="{{ url_for('tasks.done', id=task.id) }}" role="button" class="btn btn-success">Done</a>
+				</div>
+				<div class="col-2">
+					<a href="{{ url_for('tasks.delete', id=task.id) }}" role="button" class="btn btn-danger">Delete</a>
+				</div>
+				
+			</div>
+
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+
+<div class='row mt-3'>
+	<div class="col-3"><h3> Finished tasks </h1></div>
+</div>
+<div class='row '>
+	<div class="col-12">
+		<ul class="list-group">
+			{% for task in finished_tasks %}
+			<div class="row" style="border-bottom: 1px solid">
+				<div class="col-5">
+					{{ task.title }}
+				</div>
+				<div class="col-3">DUE: {{ task.due_date }}</div>
+				<div class="col-2"></div>
+				<div class="col-2">
+					<a href="{{ url_for('tasks.delete', id=task.id) }}" role="button" class="btn btn-danger">Delete</a>
+				</div>
+				
+			</div>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+
+{% endblock %}

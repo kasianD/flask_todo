@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Index page
+{% endblock %}
+
+{% block body %}
+<div class='row'>
+	<h1>Login or Register :)</h1>
+</div>
+<div class='row'>
+	<div class="col-12">
+		<form method="POST">
+			<div class="form-group">
+
+				{{ form.csrf_token }}
+				{{ form.username.label }} {{ form.username(size=64, class_="form-control") }}
+
+				{{ form.password.label }} {{ form.password(size=128, class_="form-control") }}
+			</div>
+			{% if is_not_unique %}
+			<p style="color: red">Username is not unique!</p>
+			{% endif %}
+			<button type="submit" class="btn btn-success">Submit</button>
+		</form>
+	</div>
+</div>
+{% endblock %}
