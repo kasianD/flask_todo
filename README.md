@@ -6,14 +6,15 @@ python 3.7
 
 ### Set up enviroment. Run project
 - create project **todo_app**:
-    `$ mkdir todo_app`
-    `$ cd todo_app`
+    *`$ mkdir todo_app`
+    *`$ cd todo_app`
 - clone repository from:
     `git clone https://github.com/kasianD/flask_todo.git .`
 - create and activate virtualenv:
     `$ python3 -m venv .venv`
     `$ source .venv/bin/activate`
 - install the requirements:
+    `$ pip install --upgrade pip`
     `$ pip install -r requirements.txt`
 - create database in postgres, below is an example:
 	`$ sudo -u postgres psql`
