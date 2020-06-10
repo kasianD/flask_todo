@@ -6,8 +6,8 @@ python 3.7
 
 ### Set up enviroment. Run project
 - create project **todo_app**:
-    *`$ mkdir todo_app`
-    *`$ cd todo_app`
+    -`$ mkdir todo_app`
+    -`$ cd todo_app`
 - clone repository from:
     `git clone https://github.com/kasianD/flask_todo.git .`
 - create and activate virtualenv:
