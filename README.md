@@ -27,7 +27,7 @@ python 3.7
 	`$ export DATABASE_URI="postgresql://todo_user:todo_user_pass@localhost/flask_todo_db"`
 	`$ export SECRET_KEY=<some_secret_key>`
 - make migrations
-    `$ db flask init`
-    `$ db flask upgrade`
+    `$ flask db init`
+    `$ flask db upgrade`
 - run server
     `$ python3 run.py` (will be run on [localhost:5000](localhost:5000))
